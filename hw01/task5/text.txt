@@ -1,0 +1,2 @@
+1 401 Unauthorized
+2 Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n
