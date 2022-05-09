@@ -1,0 +1,176 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+
+\graphicspath{{pictures/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\leftskip=-0cm 
+\rightskip=-0cm
+\voffset = -3cm
+\hoffset = -3cm
+\textwidth = 550pt
+\textheight = 770pt
+\pgfplotsset{width=10cm,compat=1.9}
+
+
+\begin{document}
+\Large
+HW5 
+\\
+1
+\\
+
+Время распространения 
+$$t = \frac{10}{3 \cdot 10^8} = 3.3 \cdot 10^{-8} c$$ 
+
+Общее время, необходимое для получения всех объектов при параллельных непостоянных HTTP-соединениях
+$$(\frac{3 \cdot 200}{150} + \frac{100000}{150} + 4 t) + (\frac{3 \cdot 200}{15} + \frac{100000}{15} + 4 t) \approx 7377 c$$
+
+Общее время для постоянных HTTP-соединений
+$$(\frac{3 \cdot 200}{150} + \frac{100000}{150} + 4 t) + 10 \cdot (\frac{200}{150} + \frac{100000}{150} + 2 t) \approx 7351 c$$
+
+Разница по времени меньше процента, то есть ускорения почти нет
+\\
+2
+\\
+
+В клиент-серверном взаимодействии сервер передает $F \cdot N$ данных со скоростью $u_s$, кроме случая, когда у клиента скорость приема меньше. То есть при $N = 10$ будет $\frac{F \cdot N}{N \cdot d_i} = \frac{15000}{2} = 7500 c$, при остальных $\frac{F \cdot N}{u_s} = 500 N c$.
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={Клиент-сервер},
+    xlabel={N},
+    ylabel={T},
+    xmin=0, xmax=1000,
+    ymin=0, ymax=500000,
+    xtick={10,100, 1000},
+    ytick={5000, 50000, 500000},
+    legend pos=north west,
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (10,7500)
+    (100,50000)
+    (1000,500000)
+    };
+    \legend{}
+    
+\end{axis}
+\end{tikzpicture}
+
+В одноранговом варианте скорость будет $max(u_s + N \cdot u, N \cdot d_i)$. То есть при $N = 10$ или при $u = d_i = 2Мбит/с$ скорость $N \cdot d_i$, иначе скорость $u_s + N \cdot u$. То есть время $\frac{F \cdot N}{N \cdot d_i} = \frac{15000}{2} = 7500 c$ в первом случае и $\frac{F \cdot N}{u_s + N \cdot u}$ во втором
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={Одноранговая},
+    xlabel={N},
+    ylabel={T, c},
+    xmin=0, xmax=1000,
+    ymin=0, ymax=50000,
+    xtick={10,100, 1000},
+    ytick={7500, 15000, 20000, 25000, 45000},
+    legend pos=north west,
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (10,7500)
+    (100,7500)
+    (1000,7500)
+    };
+    \addlegendentry{u = 2Мбит/с}
+   
+\addplot[
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (10,7500)
+    (100,15000)
+    (1000,20500)
+    };
+    \addlegendentry{u = 0.7Мбит/с} 
+    
+\addplot[
+    color=green,
+    mark=square,
+    ]
+    coordinates {
+    (10,7500)
+    (100,25000)
+    (1000,45000)
+    };
+    \addlegendentry{u = 0.3Мбит/с} 
+\end{axis}
+\end{tikzpicture}
+
+
+3
+\\
+
+а. При передачи каждому со скоростью $\frac{u_s}{N}$
+
+б. При передачи каждому со скоростью $d_{min}$
+
+в. Пусть для каждого клиента скорость $u_i$. 
+
+Тогда $\sum u_i \leq u_s$, то есть $$u_{min} \leq \frac{u_s}{N}$$ и $$u_i \leq d_{min}$$. 
+
+Тогда $$\frac{F}{u_{min}} \geq \frac{NF}{u_s}$$ и $$\frac{F}{u_{min}} \geq \frac{F}{d_{min}}$$
+
+То есть $$\frac{F}{u_{min}} \geq max(\frac{NF}{u_s}, \frac{F}{d_{min}})$$
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
