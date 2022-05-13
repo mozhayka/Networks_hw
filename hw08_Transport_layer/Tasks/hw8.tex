@@ -1,0 +1,92 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+
+\graphicspath{{pictures/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\leftskip=-0cm 
+\rightskip=-0cm
+\voffset = -3cm
+\hoffset = -3cm
+\textwidth = 550pt
+\textheight = 770pt
+\pgfplotsset{width=10cm,compat=1.9}
+
+
+\begin{document}
+\Large
+HW8
+\\
+1
+
+Пусть L - потеря пакетов. Тогда средняя пропускная способность равна
+$$X = \frac{1.22 \cdot MSS}{RTT \cdot \sqrt{L}}$$
+
+Тогда
+$$L = (\frac{1.22 \cdot MSS}{RTT \cdot X})^2$$
+
+Между двумя потерями пакетов отправляется $\frac{1}{L}$ пакетов, то есть 
+$$T = \frac{MSS \cdot \frac{1}{L}}{X}  = \frac{RTT^2 \cdot X}{1.22^2 \cdot MSS}$$
+
+Значит T - функция от $X$, то есть от средней пропускной способности
+\\
+2
+\\
+a) $$2(\frac{S}{R} + RTT) + 2RTT + 12\frac{S}{R} = 4RTT + 14\frac{S}{R}$$
+b) $$3(\frac{S}{R} + RTT) + 2RTT + 8\frac{S}{R}  = 5RTT + 11\frac{S}{R}$$
+a) $$(\frac{S}{R} + RTT) + 2RTT + 14\frac{S}{R} = 3RTT + 15\frac{S}{R}$$
+\\
+3
+
+Пусть было отправлено $n$ пакетов. Тогда $$\frac{W}{2} \cdot (a + 1)^n = W$$ 
+
+то есть $n = \log_{a + 1}2$. Также 
+$$S = \frac{W}{2} + \frac{W}{2} \cdot (a + 1) + ... + \frac{W}{2} \cdot (a + 1)^{n - 1} = \frac{W}{2} \cdot \frac{1 - (a + 1)^n}{1 - (a + 1)} = \frac{W}{2} \cdot \frac{1}{a} = \frac{W}{2a}$$
+
+Тогда $$L = \frac{1}{S} = \frac{2a}{W}$$
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
