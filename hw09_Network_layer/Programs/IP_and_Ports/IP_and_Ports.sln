@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IP_and_Ports", "IP_and_Ports.csproj", "{168F8557-4B35-4C0E-AAE4-53449960C23F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{168F8557-4B35-4C0E-AAE4-53449960C23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168F8557-4B35-4C0E-AAE4-53449960C23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168F8557-4B35-4C0E-AAE4-53449960C23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168F8557-4B35-4C0E-AAE4-53449960C23F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52BA553F-BDC0-434A-A288-A32BE37DA30E}
+	EndGlobalSection
+EndGlobal
