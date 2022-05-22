@@ -1,0 +1,83 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+
+\graphicspath{{pictures/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\leftskip=-0cm 
+\rightskip=-0cm
+\voffset = -3cm
+\hoffset = -3cm
+\textwidth = 550pt
+\textheight = 770pt
+\pgfplotsset{width=10cm,compat=1.9}
+
+
+\begin{document}
+\Large
+HW13
+\\
+1
+
+a) $$(Np(1 - p)^{N - 1})' = N (1 - Np) (1 - p)^{N - 2} = 0$$
+$$p = \frac{1}{N}$$
+При $p = 0$ или $p = 1$ значение изначального выражения будет $0$, в $p = \frac{1}{N}$ больше $0$, значит это и есть максимум
+
+b) $$N \frac{1}{N} (1 - \frac{1}{N})^{N - 1} = (1 - \frac{1}{N})^N \cdot (1 - \frac{1}{N})^{-1} \to \frac{1}{e}$$
+\\
+3
+
+Время одного опроса 
+$$\frac{Q}{R} + d_{\text{опроса}}$$
+
+Cуммарное время всех 
+$$N(\frac{Q}{R} + d_{\text{опроса}})$$
+
+Максимальная пропускная способность 
+$$\frac{NQ}{N(\frac{Q}{R} + d_{\text{опроса}})} = \frac{Q}{\frac{Q}{R} + d_{\text{опроса}}} = \frac{QR}{Q + R d_{\text{опроса}}}$$
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
