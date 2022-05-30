@@ -14,7 +14,7 @@ namespace Tracert
         private const int MAX_HOPS_NUMBER = 30;
         private const int MAX_BAD_ATTEMPTS = 15;
 
-        int packet_cnt;
+        int packet_cnt = 3;
         string url;
 
         ICMP packet;
@@ -23,10 +23,9 @@ namespace Tracert
         IPEndPoint iep;
         EndPoint ep;
 
-        public TraceRoute(string url, int packet_cnt = 3)
+        public TraceRoute(string url)
         {
             this.url = url;
-            this.packet_cnt = packet_cnt;
 
             packet = new();
             host = new(AddressFamily.InterNetwork, SocketType.Raw, ProtocolType.Icmp);
@@ -35,8 +34,9 @@ namespace Tracert
             ep = iep;
         }
 
-        public void Run()
+        public void Run(int packet_cnt = 3)
         {
+            this.packet_cnt = packet_cnt;
             Console.WriteLine($"tracert {url}\nMax hops {MAX_HOPS_NUMBER}\n");
             host.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, 3000);
             for (int i = 1; i < MAX_HOPS_NUMBER; i++)
